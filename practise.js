@@ -13,23 +13,31 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-// 1) создать интерфейс на основе user и протипизировать функции:
-var User = /** @class */ (function () {
-    function User(name, age, gender) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-    }
-    return User;
-}());
-var user2 = new User('Denys', 3, 'male');
-console.log(user2);
+// class User {
+//     name: string;
+//     age: number;
+//     gender: string;
+//
+//     constructor(name: string, age: number, gender: string) {
+//         this.name = name;
+//         this.age = age;
+//         this.gender = gender
+//     }
+function foobar(a) {
+    return a;
+}
+var user2 = {
+    name: 'Denys',
+    age: 32,
+    gender: 'male'
+};
 var user = {
     name: "Max",
     age: 18,
     gender: 'male'
 };
-console.log(user);
+foobar(user2);
+foobar(user);
 function sum(a, b) {
     return a + b;
 }
@@ -49,9 +57,7 @@ var Cat = /** @class */ (function () {
         this.say = say;
     }
     Cat.prototype.info = function (move, say) {
-        this.info = function () {
-            "Cat move: " + move + " and say: " + say;
-        };
+        return "Cat move: " + move + " and say: " + say;
     };
     return Cat;
 }());
@@ -61,9 +67,7 @@ var Bird = /** @class */ (function () {
         this.say = say;
     }
     Bird.prototype.info = function (move, say) {
-        this.info = function () {
-            "Bird move: " + move + " and say: " + say;
-        };
+        return "Bird move: " + move + " and say: " + say;
     };
     return Bird;
 }());
@@ -73,9 +77,7 @@ var Fish = /** @class */ (function () {
         this.say = say;
     }
     Fish.prototype.info = function (move, say) {
-        this.info = function () {
-            "Fish move: " + move + " and say: " + say;
-        };
+        return "Fish move: " + move + " and say: " + say;
     };
     return Fish;
 }());
@@ -96,17 +98,11 @@ fish.info('jump', 'bul-bul');
 var Shape = /** @class */ (function () {
     function Shape() {
     }
-    // sideA: number;
-    // sideB: number;
-    // constructor(sideA: number, sideB: number) {
-    //     this.sideA = sideA;
-    //     this.sideB = sideB;
-    // }
-    Shape.prototype.perimeter = function () {
-        console.log('In this case must be calculate perimeter');
+    Shape.prototype.perimeter = function (a) {
+        return a;
     };
-    Shape.prototype.area = function () {
-        console.log('In this case must be calculate area');
+    Shape.prototype.area = function (b) {
+        return b;
     };
     return Shape;
 }());
@@ -143,6 +139,7 @@ var Rectangle = /** @class */ (function (_super) {
     };
     return Rectangle;
 }(Shape));
+// First method //
 var triangle1 = new Triangle(10, 15, 18);
 var rectangle1 = new Rectangle(10, 20);
 var triangle2 = new Triangle(3, 4, 5);
@@ -151,3 +148,29 @@ var arrFigures = [triangle1.area(), rectangle1.area(), triangle2.area(), rectang
 for (var i = 0; i < arrFigures.length; i++) {
     console.log(arrFigures[i]);
 }
+// Second method //
+var Figures = /** @class */ (function () {
+    function Figures() {
+        this.figures = [];
+    }
+    Figures.prototype.newTriangle = function () {
+        var tri = new Triangle(10, 12, 16);
+        this.figures.push(tri);
+        return tri;
+    };
+    Figures.prototype.newRectangle = function () {
+        var rect = new Rectangle();
+        this.figures.push(rect);
+        return rect;
+    };
+    Figures.prototype.getSquareOfFigures = function () {
+        for (var i = 0; i < this.figures.length; i++) {
+            console.log(this.figures[i]);
+        }
+    };
+    return Figures;
+}());
+var figures1 = new Figures();
+figures1.newTriangle();
+figures1.newRectangle();
+figures1.getSquareOfFigures();
