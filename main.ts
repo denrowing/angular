@@ -1,3 +1,5 @@
+///////// ------  LESSON 3 -------- ///////////
+
 /////////////////////////// * HOMEWORK * ////////////////////////////////
 
 /* - створити функцію яка обчислює та повертає площу прямокутника висотою */
@@ -7,6 +9,7 @@ function rect(a: number, h: number) {
     resultRect = 1 / 2 * a * h
     return resultRect
 }
+
 console.log(rect(10, 20));
 
 /* - створити функцію яка обчислює та повертає площу кола */
@@ -15,6 +18,7 @@ function round(r: number) {
     let resultRound = Math.PI * r ** 2
     return resultRound
 }
+
 console.log(round(4));
 
 
@@ -24,6 +28,7 @@ function columpnam(r: number, h: number) {
     let resultColump = Math.PI * r ** 2 * h
     return resultColump
 }
+
 console.log(columpnam(4, 6));
 
 
@@ -42,7 +47,8 @@ function returnMinNum(arr: Array<number>) {
 
     return minNum
 }
-console.log(returnMinNum([10, - 6, 7, 9, 0, 17]));
+
+console.log(returnMinNum([10, -6, 7, 9, 0, 17]));
 
 
 /* - створити функцію яка  створює блок з текстом. Текст задати через аргумент */
@@ -50,6 +56,7 @@ console.log(returnMinNum([10, - 6, 7, 9, 0, 17]));
 function createDivText(str: string) {
     return document.write(`<div>${str}</div>`)
 }
+
 console.log(createDivText(`Typed some text`));
 
 /* - створити функцію яка  створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий */
@@ -61,9 +68,11 @@ function createList(unitList: string) {
     }
     document.write(`</ul>`)
 }
+
 console.log(createList('item #'));
 
-/* - створити функцію яка  створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл) */document
+/* - створити функцію яка  створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл) */
+document
 
 function createList2(unitList: string, n: number) {
     document.write(`<ul>`)
@@ -72,6 +81,7 @@ function createList2(unitList: string, n: number) {
     }
     document.write(`</ul>`)
 }
+
 console.log(createList2('banana', 10));
 
 /* - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список */
@@ -83,15 +93,17 @@ function createList3(mixArr: any) {
     }
     document.write(`</ul>`)
 }
+
 console.log(createList3(['banana', false, 56]));
 
 
 /////////////////////////// * CLASSWORK * ////////////////////////////////
 
 /* - створити функцію яка приймає масив та виводить його */
-function  returnArr(arr: any) {
+function returnArr(arr: any) {
     document.write(`<div>${arr}</div>`)
 }
+
 returnArr(['Some values', 12, false])
 
 /* - створити функцію яка приймає три числа та виводить найменьше. (Без Math.min!) */
@@ -104,6 +116,7 @@ function minNum(a: number, b: number, c: number) {
         alert(c);
     }
 }
+
 minNum(10, -8, 15)
 
 /* - створити функцію яка приймає три числа та виводить найбільше. (Без Math.max!) */
@@ -116,6 +129,7 @@ function maxNum(a: number, b: number, c: number) {
         alert(b);
     }
 }
+
 maxNum(10, -8, 100500)
 
 
@@ -123,6 +137,7 @@ maxNum(10, -8, 100500)
 function getMaxOfArray(numArray: Array<number>) {
     return Math.max.apply(null, numArray);
 }
+
 console.log(getMaxOfArray([20, 100, -3, 0]))
 
 
@@ -130,6 +145,7 @@ console.log(getMaxOfArray([20, 100, -3, 0]))
 function getMinOfArray(numArray: Array<number>) {
     return Math.min.apply(null, numArray);
 }
+
 console.log(getMinOfArray([20, 100, -3, 0]))
 
 
@@ -141,6 +157,7 @@ function sumValues(arr: Array<number>) {
     }
     return sum
 }
+
 console.log(sumValues([20, 100, -3, 0]))
 
 /*  - створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень. */
@@ -152,6 +169,7 @@ function averageValues(arr: Array<number>) {
     let result = sum / (arr.length - 1)
     return result
 }
+
 console.log(averageValues(randomValues(4)))
 
 /* - створити функцію яка заповнює масив рандомними числами
@@ -196,6 +214,7 @@ function someObjValues(arr: Array<object>) {
     }
     return values
 }
+
 console.log(someObjValues([{name: 'Dima', age: 13}, {model: 'Camry'}]))
 
 
@@ -216,8 +235,8 @@ function sumEqualIndex(arr1: Array<number>, arr2: Array<number>) {
     return arr
 }
 
-console.log(sumEqualIndex([1,2,3,4], [2,3,4,5]))
-document.write(`<p>${sumEqualIndex([1,2,3,4], [2,3,4,5])}</p>`)
+console.log(sumEqualIndex([1, 2, 3, 4], [2, 3, 4, 5]))
+document.write(`<p>${sumEqualIndex([1, 2, 3, 4], [2, 3, 4, 5])}</p>`)
 
 
 /* - Дан масив ['a', 'b', 'c']. Додайте йому в кінець елементи 1, 2, 3 за допомогою циклу. */
@@ -228,6 +247,7 @@ function addElemsToArr(arr1: Array<any>) {
     }
     return arr1
 }
+
 console.log(addElemsToArr(['a', 'b', 'c']))
 document.write(`<p>${addElemsToArr(['a', 'b', 'c'])}</p>`)
 
@@ -236,6 +256,7 @@ document.write(`<p>${addElemsToArr(['a', 'b', 'c'])}</p>`)
 function reverseArr(arr: Array<number>) {
     return arr.reverse()
 }
+
 console.log(reverseArr([1, 2, 3]))
 document.write(`<p>${reverseArr([1, 2, 3])}</p>`)
 
@@ -243,32 +264,35 @@ document.write(`<p>${reverseArr([1, 2, 3])}</p>`)
 /* - Дан масив [1, 2, 3]. Додайте йому в кінець елементи 4, 5, 6. */
 
 function pushElements(arr1: Array<number>) {
-    for (let i = 4; i <= 6 ; i++) {
+    for (let i = 4; i <= 6; i++) {
         arr1.push(i)
     }
 
     return arr1
 }
+
 console.log(pushElements([1, 2, 3]))
 document.write(`<p>${pushElements([1, 2, 3])}</p>`)
 
 
 /* - Дан масив [1, 2, 3]. Додайте йому в початок елементи 4, 5, 6. */
 function pushElementsUnshift(arr: Array<number>) {
-    for (let i = 6; i >= 4 ; i--) {
+    for (let i = 6; i >= 4; i--) {
         arr.unshift(i)
     }
 
     return arr
 }
+
 console.log(pushElementsUnshift([1, 2, 3]))
 document.write(`<p>${pushElementsUnshift([1, 2, 3])}</p>`)
 
 
 /* - Дан масив [1, 2, 3, 4, 5]. Перетворіть масив в [4, 5]. */
 function transform1(arr: Array<number>) {
-    return  arr.slice(-2)
+    return arr.slice(-2)
 }
+
 console.log(transform1([1, 2, 3, 4, 5]))
 document.write(`<p>${transform1([1, 2, 3, 4, 5])}</p>`)
 
@@ -278,6 +302,7 @@ document.write(`<p>${transform1([1, 2, 3, 4, 5])}</p>`)
 function transform2(arr: Array<number>) {
     return arr.slice(0, 2)
 }
+
 console.log(transform2([1, 2, 3, 4, 5]))
 document.write(`<p>${transform2([1, 2, 3, 4, 5])}</p>`)
 
@@ -289,6 +314,7 @@ function transform3(arr1: Array<any>) {
     result.push('a', 'b', 'c')
     return result
 }
+
 console.log(transform3([1, 2, 3, 4, 5]))
 document.write(`<p>${transform3([1, 2, 3, 4, 5])}</p>`)
 
@@ -297,6 +323,7 @@ function getPairedRandomNums(arr: Array<number>) {
     return arr.filter(elem => elem % 2 == 0)
 
 }
+
 console.log(getPairedRandomNums([15, 19, -20, -30, 11, 5, 8, -11.5, 13, 12]))
 document.write(`<p>${getPairedRandomNums([15, 19, -20, -30, 11, 5, 8, -11.5, 13, 12])}</p>`)
 
@@ -308,6 +335,7 @@ function copyArr(arr1: Array<number>) {
     }
     return arr2
 }
+
 console.log(copyArr([15, 19, -20, -30, 11, 5, 8, -11.5, 13, 12]))
 document.write(`<p>${copyArr([15, 19, -20, -30, 11, 5, 8, -11.5, 13, 12])}</p>`)
 
@@ -319,8 +347,9 @@ function pasteArr1(arr: Array<string>) {
     }
     return result2
 }
-console.log(pasteArr1([ 'a', 'b', 'c']))
-document.write(`<p>${pasteArr1([ 'a', 'b', 'c'])}</p>`)
+
+console.log(pasteArr1(['a', 'b', 'c']))
+document.write(`<p>${pasteArr1(['a', 'b', 'c'])}</p>`)
 
 /* - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу while зібрати всі букви в слово. */
 function pasteArr2(arr: Array<string>) {
@@ -332,8 +361,9 @@ function pasteArr2(arr: Array<string>) {
     }
     return result3
 }
-console.log(pasteArr2([ 'a', 'b', 'c']))
-document.write(`<p>${pasteArr2([ 'a', 'b', 'c'])}</p>`)
+
+console.log(pasteArr2(['a', 'b', 'c']))
+document.write(`<p>${pasteArr2(['a', 'b', 'c'])}</p>`)
 
 
 /*- Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for of зібрати всі букви в слово. */
@@ -344,8 +374,9 @@ function pasteArr3(arr: Array<string>) {
     }
     return result3
 }
-console.log(pasteArr3([ 'a', 'b', 'c']))
-document.write(`<p>${pasteArr3([ 'a', 'b', 'c'])}</p>`)
+
+console.log(pasteArr3(['a', 'b', 'c']))
+document.write(`<p>${pasteArr3(['a', 'b', 'c'])}</p>`)
 
 /* -   функція Приймає масив та число "i", та міняє місцями об`єкт який знаходиться в індексі "i" на "i+1"
 EXAMPLE:
@@ -354,12 +385,13 @@ foo([9,8,0,4], 1) // ==> [ 9 ,0, 8, 4 ]
 foo([9,8,0,4], 2) // ==> [ 9, 8, 4, 0 ]  */
 
 function changeIndex(arr: Array<number>, i: number) {
-    [arr[i], arr[i + 1]]  = [arr[i + 1], arr[i]];
+    [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
     return arr
 
 }
-console.log(changeIndex([9,8,0,4], 0))
-document.write(`<p>${changeIndex([9,8,0,4], 0)}</p>`)
+
+console.log(changeIndex([9, 8, 0, 4], 0))
+document.write(`<p>${changeIndex([9, 8, 0, 4], 0)}</p>`)
 
 
 /* - Дано список імен.
@@ -374,6 +406,7 @@ let n3 = 'Hermione Granger' */
 function normalizeNames(str: string) {
     return str.trim().split(' ').filter(string => !!string).join(' ')
 }
+
 console.log(normalizeNames('    Harry       Potter      '))
 document.write(`<p>${normalizeNames('    Harry       Potter      ')}</p>`)
 
@@ -397,5 +430,92 @@ function moveZero(arr: Array<number>) {
     return arr.concat(result)
 }
 
-console.log(moveZero([0,0,1,0]))
-document.write(`<p>${moveZero([0,0,1,0])}</p>`)
+console.log(moveZero([0, 0, 1, 0]))
+document.write(`<p>${moveZero([0, 0, 1, 0])}</p>`)
+
+
+///////// ------  LESSON 4 -------- ///////////
+
+/////////////////////////// * HOMEWORK * ////////////////////////////////
+
+/*- Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
+   створити пустий масив, наповнити його 10 об'єктами new User(....)
+   Взяти масив цей  User[] та: Відфільтрувати , залишивши тільки об'єкти з парними id (filter) та Відсортувати його по id. по зростанню (sort) */
+
+
+class User {
+    id: number
+    name: string
+    surname: string
+    email: string
+    phone: number
+
+    constructor(id: number, name: string, surname: string, email: string, phone: number) {
+        this.id = id
+        this.name = name
+        this.surname = surname
+        this.email = email
+        this.phone = phone
+
+    }
+}
+
+let user = [
+    new User(8, 'Stepan', 'Bandera', 'coolguy@gmail.com', 366778176),
+    new User(9, 'Franz', 'Kafka', 'darkmatter@gmail.com', 666642176),
+    new User(6, 'Nobody', 'Knows', 'somewere31@gmail.com', 14311116),
+    new User(7, 'Kyrylo', 'Mokrich', 'rieltorthebest31@gmail.com', 19990176),
+    new User(1, 'Sindy', 'Krauwfort', 'actorstar@gmail.com', 13515556),
+    new User(2, 'Elvis', 'Presley', 'elvisforever@gmail.com', 135354),
+    new User(3, 'Anthony', 'Snowden', 'cheeter2012@gmail.com', 1487156),
+    new User(4, 'Glenn', 'Miller', 'musicthebest@gmail.com', 1485556),
+    new User(5, 'Michael', 'Schoor', 'youtube182012@gmail.com', 1437156),
+]
+let filteredUser = user.filter((elem) => elem.id % 2 === 0).sort((a, b) => a.id - b.id)
+console.log(filteredUser)
+
+/////////////////////////// * CLASSWORK * ////////////////////////////////
+
+
+/* - створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
+   створити пустий масив, наповнити його 10 об'єктами Client
+   Взяти масив (Client []).Відсортувати його по кількості товарів в полі order по зростанню. (sort) */
+
+class Client {
+    id: number
+    name: string
+    surname: string
+    email: string
+    phone: number
+    order: Array<string>
+
+    constructor(id: number, name: string, surname: string, email: string, phone: number, order: Array<string>) {
+        this.id = id
+        this.name = name
+        this.surname = surname
+        this.email = email
+        this.phone = phone
+        this.order = order
+    }
+}
+
+let client = [
+    new Client(1, 'Sindy', 'Krauwfort', 'actorstar@gmail.com', 13515556, ['carrot', 'onion', 'cabbage' ]),
+    new Client(2, 'Elvis', 'Presley', 'elvisforever@gmail.com', 135354, ['pear', 'bananas', 'apple', 'potatoes']),
+    new Client(3, 'Anthony', 'Snowden', 'cheeter2012@gmail.com', 1487156, ['onion', 'cabbage', 'parsley', 'apple', 'potatoes']),
+    new Client(4, 'Glenn', 'Miller', 'musicthebest@gmail.com', 1485556, ['carrot', 'onion', 'cabbage', 'apple', 'potatoes']),
+    new Client(5, 'Michael', 'Schoor', 'youtube182012@gmail.com', 1437156, [ 'cabbage', 'parsley', 'pear', 'bananas', 'apple', 'potatoes']),
+    new Client(6, 'Nobody', 'Knows', 'somewere31@gmail.com', 14311116, ['bananas', 'apple']),
+    new Client(7, 'Kyrylo', 'Mokrich', 'rieltorthebest31@gmail.com', 19990176, ['parsley']),
+    new Client(8, 'Stepan', 'Bandera', 'coolguy@gmail.com', 366778176, ['carrot', 'onion', 'cabbage', 'apple', 'potatoes', 'pear', 'bananas']),
+    new Client(9, 'Franz', 'Kafka', 'darkmatter@gmail.com', 666642176, ['onion', 'cabbage']),
+    new Client(10, 'Serhiy', 'Hryshevskiy', 'founderukr@gmail.com', 33332176, ['apple']),
+]
+
+let result = client.sort((a, b) => a.order[0].length - b.order[0].length)
+console.log(result)
+
+
+
+
+
