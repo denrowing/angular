@@ -73,8 +73,8 @@ class Cat implements IAnimal {
         this.move = move;
         this.say = say;
     }
-    info(move: string, say: string) {
-            `Cat move: ${move} and say: ${say}`;
+    info(move: string, say: string) : string {
+           return `Cat move: ${move} and say: ${say}`;
     }
 }
 
@@ -87,8 +87,8 @@ class Bird implements IAnimal {
         this.say = say;
     }
 
-    info(move: string, say: string) {
-            `Bird move: ${move} and say: ${say}`;
+    info(move: string, say: string): string {
+           return `Bird move: ${move} and say: ${say}`;
     }
 }
 
@@ -100,8 +100,8 @@ class Fish implements IAnimal{
         this.say = say;
     }
 
-    info(move: string, say: string) {
-            `Fish move: ${move} and say: ${say}`;
+    info(move: string, say: string): string {
+            return `Fish move: ${move} and say: ${say}`;
     }
 }
 
