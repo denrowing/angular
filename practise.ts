@@ -1,41 +1,39 @@
 // 1) создать интерфейс на основе user и протипизировать функции:
-class User {
+interface IUser {
     name: string;
     age: number;
     gender: string;
-
-    constructor(name: string, age: number, gender: string) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender
-    }
-
-    // sum?(a: number, b: number){
-    //     return a + b;
-    // }
-    // showSum?(a: number,b: number) {
-    //     console.log(a + b);
-    // }
-    // incAge?(inc) {
-    //     this.age += inc;
-    //     return this.age;
-    // }
 }
 
-let user2 = new User(
-    'Denys',
-    3,
-    'male',
-    );
-console.log(user2);
+// class User {
+//     name: string;
+//     age: number;
+//     gender: string;
+//
+//     constructor(name: string, age: number, gender: string) {
+//         this.name = name;
+//         this.age = age;
+//         this.gender = gender
+//     }
+
+function foobar(a: IUser): object {
+    return a;
+}
+
+let user2 = {
+    name: 'Denys',
+    age: 32,
+    gender: 'male'
+};
 
 const user = {
         name:"Max",
-        age:18,
+        age: 18,
         gender:'male'
     };
-console.log(user);
 
+foobar(user2);
+foobar(user)
 
 function sum(a: number,b: number): number {
     return a + b;
@@ -76,9 +74,7 @@ class Cat implements IAnimal {
         this.say = say;
     }
     info(move: string, say: string) {
-        this.info = function(){
             `Cat move: ${move} and say: ${say}`;
-        }
     }
 }
 
@@ -92,9 +88,7 @@ class Bird implements IAnimal {
     }
 
     info(move: string, say: string) {
-        this.info = function(){
             `Bird move: ${move} and say: ${say}`;
-        }
     }
 }
 
@@ -107,9 +101,7 @@ class Fish implements IAnimal{
     }
 
     info(move: string, say: string) {
-        this.info = function(){
             `Fish move: ${move} and say: ${say}`;
-        }
     }
 }
 
@@ -132,17 +124,12 @@ fish.info('jump', 'bul-bul');
 // 2) проходимся циклом по нему и и высчитываем площадь для каждой фигуры
 
 abstract class Shape {
-    // sideA: number;
-    // sideB: number;
-    // constructor(sideA: number, sideB: number) {
-    //     this.sideA = sideA;
-    //     this.sideB = sideB;
-    // }
-    perimeter():void {
-        console.log('In this case must be calculate perimeter');
+
+    perimeter(a): number {
+        return a;
     }
-    area():void {
-        console.log('In this case must be calculate area');
+    area(b):number {
+        return b;
     }
 }
 
@@ -150,10 +137,10 @@ class Triangle extends Shape{
     constructor(public sideA: number, public sideB: number, public sideC: number) {
         super();
     }
-    perimeter() {
+    perimeter(): number {
         return this.sideA + this.sideB + this.sideC;
     }
-    area() {
+    area(): number {
         return ( this.sideA * this.sideB ) / 2;
     }
 }
@@ -162,14 +149,16 @@ class Rectangle extends Shape{
     constructor(public sideA: number, public sideB: number) {
         super();
     }
-    perimeter() {
+    perimeter(): number {
         return (this.sideA + this.sideB) * 2;
     }
-    area() {
+    area(): number {
         return this.sideA * this.sideB;
     }
 }
 
+
+// First method //
 let triangle1 = new Triangle(10, 15, 18);
 let rectangle1 = new Rectangle(10, 20);
 
@@ -181,3 +170,35 @@ let arrFigures: Array<number> = [triangle1.area(), rectangle1.area(), triangle2.
 for (let i = 0; i < arrFigures.length; i++) {
     console.log(arrFigures[i]);
 }
+
+
+// Second method //
+class Figures {
+    figures: Array<number>
+    constructor() {
+        this.figures = [];
+    }
+
+    newTriangle(): number {
+        let tri = new Triangle(10, 12, 16);
+        this.figures.push(tri);
+        return tri;
+    }
+
+    newRectangle(): number {
+        let rect = new Rectangle();
+        this.figures.push(rect);
+        return rect;
+    }
+
+    getSquareOfFigures() {
+        for (let i = 0; i < this.figures.length; i++) {
+            console.log(this.figures[i]);
+        }
+    }
+}
+
+let figures1 = new Figures()
+figures1.newTriangle();
+figures1.newRectangle()
+figures1.getSquareOfFigures()
