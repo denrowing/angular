@@ -124,29 +124,24 @@ fish.info('jump', 'bul-bul');
 // 2) проходимся циклом по нему и и высчитываем площадь для каждой фигуры
 
 abstract class Shape {
-
-    perimeter(a): number {
-        return a;
-    }
-    area(b):number {
-        return b;
-    }
+    abstract perimeter(): number;
+    abstract area(): number;
 }
 
-class Triangle extends Shape{
-    constructor(public sideA: number, public sideB: number, public sideC: number) {
+class Triangle extends Shape {
+    constructor(private sideA: number, private sideB: number, private sideC: number) {
         super();
     }
     perimeter(): number {
         return this.sideA + this.sideB + this.sideC;
     }
     area(): number {
-        return ( this.sideA * this.sideB ) / 2;
+        return (( this.sideA + this.sideB + this.sideC) / 2 ) * 0.5;
     }
 }
 
 class Rectangle extends Shape{
-    constructor(public sideA: number, public sideB: number) {
+    constructor(private sideA: number, private sideB: number) {
         super();
     }
     perimeter(): number {
@@ -159,46 +154,23 @@ class Rectangle extends Shape{
 
 
 // First method //
-let triangle1 = new Triangle(10, 15, 18);
-let rectangle1 = new Rectangle(10, 20);
-
-let triangle2 = new Triangle(3, 4, 5);
-let rectangle2 = new Rectangle(8, 10);
-
-let arrFigures: Array<number> = [triangle1.area(), rectangle1.area(), triangle2.area(), rectangle2.area()];
-
-for (let i = 0; i < arrFigures.length; i++) {
-    console.log(arrFigures[i]);
-}
+// let triangle1 = new Triangle(10, 15, 18);
+// let rectangle1 = new Rectangle(10, 20);
+//
+// let triangle2 = new Triangle(3, 4, 5);
+// let rectangle2 = new Rectangle(8, 10);
+//
+// let arrFigures: Array<number> = [triangle1.area(), rectangle1.area(), triangle2.area(), rectangle2.area()];
+//
+// for (let i = 0; i < arrFigures.length; i++) {
+//     console.log(arrFigures[i]);
+// }
 
 
 // Second method //
-class Figures {
-    figures: Array<number>
-    constructor() {
-        this.figures = [];
-    }
+const shapes: Shape[] = [new Triangle(10, 15, 18), new Rectangle(8, 10)]
 
-    newTriangle(): number {
-        let tri = new Triangle(10, 12, 16);
-        this.figures.push(tri);
-        return tri;
-    }
-
-    newRectangle(): number {
-        let rect = new Rectangle();
-        this.figures.push(rect);
-        return rect;
-    }
-
-    getSquareOfFigures() {
-        for (let i = 0; i < this.figures.length; i++) {
-            console.log(this.figures[i]);
-        }
-    }
+for (let shape of shapes) {
+    console.log(shape.area());
+    console.log(shape.perimeter());
 }
-
-let figures1 = new Figures()
-figures1.newTriangle();
-figures1.newRectangle()
-figures1.getSquareOfFigures()
