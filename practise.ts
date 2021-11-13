@@ -166,7 +166,6 @@ class Rectangle extends Shape{
 //     console.log(arrFigures[i]);
 // }
 
-
 // Second method //
 const shapes: Shape[] = [new Triangle(10, 15, 18), new Rectangle(8, 10)]
 
